@@ -19,18 +19,25 @@ else {
 //question 2
 
 //Create a for loop that counts from 15 to 25
-//Console log the value of the counter variable inside the loop only if it's equal to 17 or 20.
+//Console log the value of the counter variable 
+//inside the loop only if it's equal to 17 or 20.
 
 //answer 2
 for (var  i = 15; i<=25; i++) {
-    if (i === 17 && 20)
+    counterVariable1 = 17;
+    counterVariable2 = 25;
+    
+    equal = (counterVariable1, counterVariable2)
+    if ( i === equal)
     console.log(i);
 }
 
 
 
 //question 3
-//Loop through the array below and add an li item to the ul element in the HTML containing the title and rating of each game only if the rating for the game is below 3.5.
+//Loop through the array below and add an li item to the ul element
+// in the HTML containing the title and rating of each game only if 
+//the rating for the game is below 3.5.
 //If a game is unrated, exclude it from the list.
 
 
@@ -60,10 +67,39 @@ var games = [
     },
 ];
 
-for (var i=0; i<= games.length; i++){
+const liElement = document.querySelector(".games")
 
-    var title = document.createElement("li")
-    var rating = document.createElement("li")
 
-    console.log("")
+
+
+
+//question 4
+
+//Create a function called whatIDontLike that accepts one argument.
+//Inside the function, check if the argument has a string value.
+//If it doesn't log the message "Please send in a string".
+//If the argument is a string value, log the message "I don't like " together with the argument.
+//Call the function and pass in a value of your choice.
+
+
+//answer 4
+
+
+function whatIDontLike(value) {
+    const datatype =typeof value;
+    if(datatype === "string"){
+        console.log("I don't like" + " " + value);
+
+    }
+    else{
+        console.log("Please send in a string")
+    }
+
 }
+
+whatIDontLike("insects")
+
+
+
+//question 5
+//
