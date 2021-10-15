@@ -67,7 +67,9 @@ var games = [
     },
 ];
 
-const liElement = document.querySelector(".games")
+const liElement = document.querySelector(".games");
+console.log(liElement)
+liElement.innerHTML += "<li></li>"
 
 
 
