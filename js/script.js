@@ -69,7 +69,12 @@ var games = [
 
 const liElement = document.querySelector(".games");
 console.log(liElement)
-liElement.innerHTML += "<li></li>"
+liElement.innerHTML += "<li><a> Grand Theft Auto : 4.48 </a></li>";
+liElement.innerHTML += "<li><a> Portal 2         : 3.5 </a></li>";
+liElement.innerHTML += "<li><a> Team Fortress    : null </a></li>";
+liElement.innerHTML += "<li><a> The Witcher      : 3.0 </a></li>";
+liElement.innerHTML += "<li><a> The Elder Scrolls : 2.9 </a></li>";
+
 
 
 
