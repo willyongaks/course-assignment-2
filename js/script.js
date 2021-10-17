@@ -121,9 +121,32 @@ whatIDontLike("insects")
 //answer 5
 
 function convertToNumbers(a,b){
+    if (a === null || b === null) {
+        return "Invalid argument(s)"
+    }
 
+    if (typeof a === "string"){
+        a = parseFloat(a);
+        if (isNaN(a)){
+            return "Invalid argument(s)"
+        }
+    }
+    if (typeof b === "string"){
+        b = parseFloat(b);
+        if (isNaN(b)) {
+            return "Invalid argument(s)"
+        }
+    }
+    return b - a 
+    
 }
 
+console.log(convertToNumbers(1,42))
+console.log(convertToNumbers(200, 150))
+console.log(convertToNumbers(10, "50"))
+console.log(convertToNumbers("100", "400"))
+console.log(convertToNumbers("Ten", "One Hundred"))
+console.log(convertToNumbers(null, 123))
 
 //Question 6
 
@@ -144,7 +167,8 @@ function convertToNumbers(a,b){
 //answer 6
 
  var button = document.querySelector(".page");
- var title = document.querySelector("h1")
+ var title = document.querySelector("title")
+ var h1 = document.querySelector("h1")
  var body = document.querySelector("body")
  var ul  = document.querySelector(".games")
 
@@ -152,11 +176,13 @@ function convertToNumbers(a,b){
 
 
  button.onclick = function(){
-     title.innerHTML ="updated title"
-     title.style.fontFamily = "impact"
-     //title.innerHTML = "<h1><a href=""> Programming Foundations Course Assignment </a></h1>"
+     title.innerHTML ="Updated title";
+     h1.style.fontFamily = "impact";
+     h1.style.color="green";
+     h1.setAttribute("href" ,"#");
      body.style.backgroundColor = "yellow"
-     ul.style. textdecoration = "none"
+     ul.style.listStyleType  = "none";
+     ul.style.padding = "0";
 
  }
 
@@ -188,8 +214,22 @@ var toys = [
 
 //answer
 
-var buttonPrice = document.querySelector(".price");
+var sum = 0;
+var button = document.querySelector(".price");
+for (var i = 0; i < toys.length; i++){
+    var toyPrice = toys[i].price;
+    if (typeof toyPrice === "string"){
+        var parsedToyPrice = parseFloat(toyPrice);
+        if (!isNaN(parsedToyPrice)){
+            sum += parsedToyPrice;
+        }
+    }
+    else if (toyPrice != null){
+        sum += toyPrice;
+    }
+}
+console.log(sum); 
 
-var total = toys
-
-buttonPrice.onclick = "total"
+button.onclick = function() {
+    total.innerHTML = sum
+}
